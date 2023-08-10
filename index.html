@@ -8,10 +8,23 @@
   </head>
   <body>
     <div id="app">
-      <ul v-if="emptyCharacters.length !== 0">
+      <table>
+        <thead>
+          <tr><th>GoT Characters</th></tr>
+        </thead>
+        <tbody>
+          <tr v-for="c in characters">
+            <td>{{ c }}</td>
+          </tr>
+          <tr v-for="e in employees">
+            <td>{{ e }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- <ul v-if="emptyCharacters.length !== 0">
         <li v-else>Charater List is Empty</li>
         <li v-for="c in emptyCharacters>{{ c }}</li>
-      </ul>
+      </ul> -->
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
@@ -26,7 +39,8 @@
         data() {
           return {
           characters: ["Jon Snow", "Arya Stark", "Cersei Lannister", "Jamie Lanister", "Sansa Stark", "Ned Stark"],
-          emptyCharacters: []
+          emptyCharacters: [],
+          employees: ["Christian", "Amdy", "Danny", "Gloria", "Enoch", "Philip"]
           }
         }
       }).mount('#app')
